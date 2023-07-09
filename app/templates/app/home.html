@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment form</title>
+    <style>
+        body{
+            font-family: 'Arial',sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+
+        }
+        h1{
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        form{
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        label{
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+
+        }
+        input[type="text"],
+        textarea,
+        input[type="datetime-local"]{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-family: inherit;
+            font-size: 16px;
+            color: #333;
+        }
+        input[type="submit"]{
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>CMC</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="text">Text:</label>
+        <textarea name="text" id="text"  rows="4" required></textarea><br><br>
+
+        <label for="start_time">Start Time:</label>
+        <input type="datetime-local" name="start_time" id="start_time" required><br><br>
+
+        <label for="end_time">End Time</label>
+        <input type="datetime-local" name="end_time" id="end_time" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
